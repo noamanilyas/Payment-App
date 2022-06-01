@@ -1,4 +1,6 @@
 process.env.NODE_ENV = "test";
+process.env.SECRET_KEY = "vOVH6sdmpNWjRRIqCc7rdxs01lwHzfr3";
+process.env.ALGORITHM = "aes-256-ctr";
 import { decrypt, encrypt } from "../../../src/common/crypto.function";
 import crypto from "crypto";
 

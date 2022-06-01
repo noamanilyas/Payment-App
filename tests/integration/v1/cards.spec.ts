@@ -1,4 +1,6 @@
 process.env.NODE_ENV = "test";
+process.env.SECRET_KEY = "vOVH6sdmpNWjRRIqCc7rdxs01lwHzfr3";
+process.env.ALGORITHM = "aes-256-ctr";
 import supertest from "supertest";
 
 import { app, server } from "../../../src/app";
@@ -9,7 +11,7 @@ console.error = jest.fn(); // silence log during test
 console.log = jest.fn(); // silence log during test
 
 /**
- * Added a sample test for refrence
+ * Added a sample test for refrence (Next Todo: replace with mocks for sql)
  */
 
 describe("API Test", () => {
