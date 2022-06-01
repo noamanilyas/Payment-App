@@ -1,0 +1,108 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "This is a simple example Payment App with NodeJS API project to demonstrate Swagger Documentation",
+    "version": "1.0.0",
+    "title": "Payment App APIs",
+    "contact": {
+      "email": "noaman.ilyas@gmail.com"
+    },
+    "license": {
+      "name": "Apache 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    }
+  },
+  "schemes": ["http"],
+  "host": "localhost:1337",
+  "paths": {
+    "/card": {
+      "post": {
+        "summary": "Post card",
+        "description": "Post card",
+        "produces": ["application/json"],
+        "consumes": ["application/json"],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Card Object",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "cardNumber": {
+                  "type": "string",
+                  "example": "4024007135259828"
+                },
+                "cvv": {
+                  "type": "string",
+                  "example": 433
+                },
+                "name": {
+                  "type": "string",
+                  "example": "Garnett Brown"
+                },
+                "expiryMonth": {
+                  "type": "string",
+                  "example": 3
+                },
+                "expiryYear": {
+                  "type": "string",
+                  "example": 2022
+                },
+                "exp": {
+                  "type": "boolean",
+                  "example": "03/2022"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object"
+            }
+          },
+          "400": {
+            "description": "Invalid request parameters",
+            "schema": {
+              "$ref": "#/definitions/InvalidResponse"
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "schema": {
+              "$ref": "#/definitions/InvalidResponse"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "InvalidResponse": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "boolean"
+        },
+        "result": {
+          "type": "boolean"
+        },
+        "error": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string"
+            },
+            "message": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
+}
