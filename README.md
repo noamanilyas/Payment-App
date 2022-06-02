@@ -31,6 +31,7 @@
 5. Add load tests using Artillery.
 6. Improve eslint and tsconfig rules.
 7. Document everything.
+8. Add db migrations.
 
 ## Thought process on using crypto lib
 
